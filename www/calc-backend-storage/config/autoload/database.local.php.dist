@@ -1,0 +1,13 @@
+<?php
+
+return [
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn' => 'mysql:dbname=calculator;host=mysql',
+        'username' => 'root',
+        'password' => '',
+        'driver_options' => array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8MB4\''
+        ),
+    ]
+];

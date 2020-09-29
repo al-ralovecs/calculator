@@ -1,0 +1,72 @@
+
+    <v-container class="pa-0">
+
+        <div class="calculator">
+            <div class="calculator__display">{{ result }}</div>
+
+            <div class="calculator__memory_keys">
+                <button
+                    :class="'key--memory' + (inMemory(1) ? ' has-record' : '')"
+                    data-action="m0"
+                    @click="getFromMemory(0)"
+                >M0</button>
+                <button
+                    :class="'key--memory' + (inMemory(2) ? ' has-record' : '')"
+                    data-action="m1"
+                    @click="getFromMemory(1)"
+                >M1</button>
+                <button
+                    :class="'key--memory' + (inMemory(3) ? ' has-record' : '')"
+                    data-action="m2"
+                    @click="getFromMemory(2)"
+                >M2</button>
+                <button
+                    :class="'key--memory' + (inMemory(4) ? ' has-record' : '')"
+                    data-action="m3"
+                    @click="getFromMemory(3)"
+                >M3</button>
+                <button
+                    :class="'key--memory' + (inMemory(5) ? ' has-record' : '')"
+                    data-action="m4"
+                    @click="getFromMemory(4)"
+                >M4</button>
+            </div>
+
+            <div class="calculator__keys">
+                <button
+                    :class="'key--operator' + (operation === 'add' ? ' is-depressed' : '')"
+                    data-action="add"
+                    @click="setOperation('add')"
+                >+</button>
+                <button
+                    :class="'key--operator' + (operation === 'subtract' ? ' is-depressed' : '')"
+                    data-action="subtract"
+                    @click="setOperation('subtract')"
+                >-</button>
+                <button
+                    :class="'key--operator' + (operation === 'multiply' ? ' is-depressed' : '')"
+                    data-action="multiply"
+                    @click="setOperation('multiply')"
+                >&times;</button>
+                <button
+                    :class="'key--operator' + (operation === 'divide' ? ' is-depressed' : '')"
+                    data-action="divide"
+                    @click="setOperation('divide')"
+                >÷</button>
+                <button @click="put(7)">7</button>
+                <button @click="put(8)">8</button>
+                <button @click="put(9)">9</button>
+                <button @click="put(4)">4</button>
+                <button @click="put(5)">5</button>
+                <button @click="put(6)">6</button>
+                <button @click="put(1)">1</button>
+                <button @click="put(2)">2</button>
+                <button @click="put(3)">3</button>
+                <button @click="put(0)">0</button>
+                <button @click="putDecimal" data-action="decimal">.</button>
+                <button @click="clear()" data-action="clear">AC</button>
+                <button @click="calculate()" class="key--equal" data-action="calculate">=</button>
+            </div>
+        </div>
+
+    </v-container>
